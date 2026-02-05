@@ -29,14 +29,14 @@ export default function NewBookingPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 animate-gradient py-12 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50 py-12 px-4">
             <div className="max-w-6xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-10">
-                    <h1 className="text-5xl font-bold text-white mb-3 tracking-tight drop-shadow-lg">
+                    <h1 className="text-5xl font-bold text-gray-800 mb-3 tracking-tight drop-shadow-sm">
                         New Booking Entry
                     </h1>
-                    <p className="text-white/90 text-lg font-light">
+                    <p className="text-gray-600 text-lg font-light">
                         Fill in the details below to create a new shipment booking
                     </p>
                 </div>

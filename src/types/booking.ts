@@ -1,7 +1,7 @@
 export interface BookingFormValues {
     senderName: string;
     senderMobile: string;
-    senderEmail?: string;
+    senderEmail: string;
 
     receiverName: string;
     receiverAddress: string;

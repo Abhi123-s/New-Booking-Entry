@@ -29,27 +29,53 @@ export default function NewBookingPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 py-8 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 animate-gradient py-12 px-4">
             <div className="max-w-6xl mx-auto">
-                <h1 className="text-3xl font-bold text-gray-900 mb-8">New Booking Entry</h1>
+                {/* Header Section */}
+                <div className="text-center mb-10">
+                    <h1 className="text-5xl font-bold text-white mb-3 tracking-tight drop-shadow-lg">
+                        New Booking Entry
+                    </h1>
+                    <p className="text-white/90 text-lg font-light">
+                        Fill in the details below to create a new shipment booking
+                    </p>
+                </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Sender & Receiver Details */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <SenderDetails register={register} errors={errors} />
                         <ReceiverDetails register={register} errors={errors} />
                     </div>
+
+                    {/* Package Details */}
                     <PackageDetails register={register} errors={errors} watch={watch} />
 
-                    <div className="flex justify-end">
+                    {/* Submit Button */}
+                    <div className="flex justify-end pt-4">
                         <button
                             type="submit"
                             disabled={!isValid}
-                            className={`px-6 py-2 rounded-md font-medium text-white transition-colors ${isValid
-                                ? 'bg-blue-600 hover:bg-blue-700 cursor-pointer'
-                                : 'bg-gray-400 cursor-not-allowed'
-                                }`}
+                            className={`
+                                group relative px-8 py-4 rounded-xl font-semibold text-white text-lg
+                                transition-all duration-300 ease-out
+                                ${isValid
+                                    ? 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-2xl hover:scale-105 cursor-pointer'
+                                    : 'bg-gray-400 cursor-not-allowed opacity-60'
+                                }
+                            `}
                         >
-                            Submit Booking
+                            <span className="flex items-center gap-2">
+                                <svg
+                                    className={`w-6 h-6 ${isValid ? 'group-hover:rotate-12 transition-transform duration-300' : ''}`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                                Submit Booking
+                            </span>
                         </button>
                     </div>
                 </form>
